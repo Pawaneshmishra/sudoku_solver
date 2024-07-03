@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sudoku Solver</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Sudoku Solver</h1>
+        <div id="notification"></div>
+        <div class="grid" id="sudoku-grid">
+            <!-- Generate the 9x9 grid here -->
+            <script>
+                const grid = document.getElementById('sudoku-grid');
+                for (let i = 0; i < 9; i++) {
+                    for (let j = 0; j < 9; j++) {
+                        const input = document.createElement('input');
+                        input.type = 'number';
+                        input.min = 1;
+                        input.max = 9;
+                        input.id = `cell-${i}-${j}`;
+                        grid.appendChild(input);
+                    }
+                }
+            </script>
+        </div>
+        <div class="buttons">
+            <button onclick="solveSudoku()">Solve</button>
+            <button onclick="validateSudoku()">Validate</button>
+            <button onclick="generateSudoku()">Generate</button>
+            <button onclick="resetGrid()">Reset</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
